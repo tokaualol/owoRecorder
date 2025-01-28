@@ -46,10 +46,10 @@ namespace nt
 namespace Clicker {
 
     bool break_blocks = false;
-    HWND minecraft = FindWindowA("LWJGL", nullptr);
+    HWND minecraft = FindWindowA("GLFW30", nullptr);
 
     void send_lclick() {
-        HWND minecraft = FindWindowA("LWJGL", nullptr);
+        HWND minecraft = FindWindowA("GLFW30", nullptr);
         //HWND minecraft = GetForegroundWindow();
 
         POINT pos{};
@@ -97,7 +97,7 @@ namespace Recorder {
     char replay_bind;
 
     void record_clicks() {
-        HWND minecraft = FindWindowA("LWJGL", nullptr);
+        HWND minecraft = FindWindowA("GLFW30", nullptr);
         nt::sleep(1);
 
         if (GetAsyncKeyState(VK_LBUTTON) && (GetForegroundWindow() == minecraft) && !Clicker::is_cursor_visible()) {
